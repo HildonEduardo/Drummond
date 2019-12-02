@@ -24,6 +24,14 @@ public class Drummond {
         return instance;
     }
 
+    public void setUseLogFile(boolean useLogFile) {
+        this.useLogFile = useLogFile;
+    }
+
+    public void setDebugMode(boolean debugMode) {
+        this.debugMode = debugMode;
+    }
+
     public void initialize(final Context context) {
         this.context = context;
         this.useLogFile = false;
