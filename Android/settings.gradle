@@ -1,0 +1,2 @@
+include ':app', ':drummond'
+rootProject.name='Drummond App Sample'
