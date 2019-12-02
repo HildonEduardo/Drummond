@@ -14,7 +14,7 @@ public class DrummondHelper {
     public static Drummond initFullDebugMode(Context  context) {
         final Drummond instance = Drummond.getInstance();
         instance.initialize(context);
-        
+
         return instance;
     }
 
