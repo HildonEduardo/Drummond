@@ -11,13 +11,15 @@ import com.help.drummond.Drummond;
  */
 public class DrummondHelper {
 
-    public static Drummond initFullDebugMode(Context  context) {
+    public static void initFullDebugMode(Context context) {
         final Drummond instance = Drummond.getInstance();
         instance.initialize(context);
-
-        return instance;
     }
 
+    public static void initFullDebugMode(Context context, String symbol) {
+        initFullDebugMode(context);
+        Drummond.getInstance().setSymbol(symbol);
+    }
 
     public static Drummond initFileOnly(Context  context) {
         final Drummond instance = Drummond.getInstance();
