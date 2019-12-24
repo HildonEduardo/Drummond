@@ -1,2 +1,2 @@
-include ':app', ':drummond'
+include ':app', ':drummond', ':unity-classes'
 rootProject.name='Drummond App Sample'

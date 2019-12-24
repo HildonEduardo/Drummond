@@ -84,7 +84,7 @@ public class Drummond implements CrashHandlingListener {
     // end region not default tag
 
     public void v(String message) {
-        verbose(appTag, prepareMessage(message));
+        verbose(appTag, message);
     }
 
     public void d(String message) {

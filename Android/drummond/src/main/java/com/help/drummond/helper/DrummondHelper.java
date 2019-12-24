@@ -30,4 +30,8 @@ public class DrummondHelper {
         return instance;
     }
 
+    public static Drummond getDrummond() {
+        return Drummond.getInstance();
+    }
+
 }
