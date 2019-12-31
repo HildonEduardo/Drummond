@@ -5,12 +5,26 @@ A simple and efficient Log framework for Android with support to Unity applicati
 
 Gradle
 ------
+
+Project level build.gradle:
+
+```
+allprojects {
+    repositories {
+        ...
+        mavenCentral()
+    }
+}
+```
+
+App level build.gradle:
 ```
 dependencies {
     ...
-    implementation 'com.github.drummond:0.1-SNAPSHOT'
+    implementation 'com.github.hildoneduardo:drummond:0.1'
 }
 ```
+
 
 Usage
 -----
