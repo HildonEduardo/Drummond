@@ -18,12 +18,12 @@ First configure your Application object:
 ```java
 public class SampleApp extends Application {  
 
-    @Override  
+	@Override  
 	public void onCreate() {  
 		super.onCreate();  
 		DrummondHelper.initFullDebugMode(this);
-    Drummond.getInstance().setSymbol("###"); // all your logs will start with this symbol
-    //default symbol = "###"
+		Drummond.getInstance().setSymbol("###"); // all your logs will start with this symbol
+		//default symbol = "###"
   }  
 }
 ```
