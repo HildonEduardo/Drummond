@@ -3,7 +3,6 @@ package com.help.drummond;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        Drummond.getInstance().d("This is a simple debug");
+        Drummond.d("This is a simple debug");
     }
 }
