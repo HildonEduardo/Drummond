@@ -21,7 +21,9 @@ public class SampleApp extends Application {
     @Override  
 	public void onCreate() {  
 		super.onCreate();  
-		DrummondHelper.initFullDebugMode(this);  
+		DrummondHelper.initFullDebugMode(this);
+    Drummond.getInstance().setSymbol("###"); // all your logs will start with this symbol
+    //default symbol = "###"
   }  
 }
 ```
