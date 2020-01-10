@@ -2,6 +2,8 @@ package com.help.drummond;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.util.Log;
 import com.help.drummond.exceptions.CrashHandlingListener;
 import com.help.drummond.exceptions.ExceptionHandlerManager;
@@ -47,7 +49,16 @@ public class Drummond implements CrashHandlingListener {
     public void initialize(final Context ctx) {
         context = ctx;
         useLogFile = false;
-        debugMode = true;
+
+        ApplicationInfo ai = null;
+        try {
+            ai = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            debugMode = bundle.getBoolean("drummond.log.enabled");
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            debugMode = true;
+        }
 
         appTag = getApplicationName();
 
@@ -62,10 +73,17 @@ public class Drummond implements CrashHandlingListener {
 
     // begin region not default tag
     public static void verbose(String tag, String message) {
+        if (!debugMode) {
+            return;
+        }
+
         Log.v(tag, prepareMessage(message));
     }
 
     public static void debug(String tag, String message) {
+        if (!debugMode) {
+            return;
+        }
         Log.d(tag, prepareMessage(message));
     }
 
@@ -74,10 +92,16 @@ public class Drummond implements CrashHandlingListener {
     }
 
     public static void info(String tag, String message) {
+        if (!debugMode) {
+            return;
+        }
         Log.i(tag, prepareMessage(message));
     }
 
     public static void warn(String tag, String message) {
+        if (!debugMode) {
+            return;
+        }
         Log.w(tag, prepareMessage(message));
     }
     // end region not default tag

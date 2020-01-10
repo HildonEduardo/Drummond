@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:name=".app.SampleApp"
         android:supportsRtl="true"
-
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="drummond.log.enabled" android:value="true" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
